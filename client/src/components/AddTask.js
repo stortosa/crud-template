@@ -16,7 +16,7 @@ class AddTask extends Component {
 
   getAllTasks = () => {
     axios
-      .get('/api')   //      .get('http://localhost:4000/tasks')
+      .get('http://localhost:4000/tasks')   //      .get('http://localhost:4000/tasks')
       .then(response => {
         console.log(response.data.tasks)
         this.setState({
@@ -40,7 +40,7 @@ class AddTask extends Component {
       return;
     }
 
-    axios.post('/api', {   //    axios.post('http://localhost:4000/tasks', {
+    axios.post('http://localhost:4000/tasks', {   //    axios.post('http://localhost:4000/tasks', {
       description
     })
       .then(createdTask => {
@@ -75,7 +75,7 @@ class AddTask extends Component {
     console.log(chosenTask.done)
 
     axios
-      .put(`/api/${task_id}`, {    // .put(`http://localhost:4000/tasks/${task_id}`, {
+      .put(`http://localhost:4000/tasks/${task_id}`, {    // .put(`http://localhost:4000/tasks/${task_id}`, {
         done: chosenTask.done,
       })
       .then(updatedTaskInfo => {
@@ -104,7 +104,7 @@ class AddTask extends Component {
 
   deleteTask = (task_id) => {
     // console.log("Deleting........", task_id)
-    axios.delete(`/api/${task_id}`)    //    axios.delete(`http://localhost:4000/tasks/${task_id}`)
+    axios.delete(`http://localhost:4000/tasks/${task_id}`)    //    axios.delete(`http://localhost:4000/tasks/${task_id}`)
       .then(res => {
         console.log(res);
         console.log(this.state.done)
