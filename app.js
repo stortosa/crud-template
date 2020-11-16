@@ -7,7 +7,7 @@ const cors = require('cors');
 require('./db');
 require('dotenv');
 
-const taskRoutes = require('../routes/tasks.js');
+const taskRoutes = require('./routes/tasks');
 
 const whiteList = ['http://localhost:3000', 'http://localhost', 'https://final-todo-list.herokuapp.com/']       // meter la de heroku
 const corsOptions = {
