@@ -57,7 +57,7 @@ app.use((error, req, res, next) => {
   })
 });
 
-if (Process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('*', function (req, res) {
