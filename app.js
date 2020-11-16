@@ -37,7 +37,7 @@ app.use((req, res, next) => {
   next();
 })
 // posible comentar:
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes which should handle requests:
 app.use('/tasks', taskRoutes);
